@@ -11,24 +11,28 @@ class SvgTurtle(TNavigator, TPen):
     """ Helper class to include turtle graphics within a PDF document. """
 
     class _Screen(object):
-        def __init__(self, drawing):
+        def __init__(self, drawing, width, height):
             self.cv = drawing
+            self._window_width = width
+            self._window_height = height
+
+        def window_width(self):
+            return self._window_width
+
+        def window_height(self):
+            return self._window_height
 
     def __init__(self, drawing, width=None, height=None):
-        if width is not None:
-            self._window_width = width
-        else:
-            self._window_width = _parse_int(drawing['width'])
-        if height is not None:
-            self._window_height = height
-        else:
-            self._window_height = _parse_int(drawing['height'])
+        if width is None:
+            width = _parse_int(drawing['width'])
+        if height is None:
+            height = _parse_int(drawing['height'])
         self._path = None
         self._lines_to_draw = None
         self.screen = None
         TNavigator.__init__(self)
         TPen.__init__(self)
-        self.screen = SvgTurtle._Screen(drawing)
+        self.screen = SvgTurtle._Screen(drawing, width, height)
         self.__xoff = self.window_width()/2
         self.__yoff = -self.window_height()/2
 
@@ -93,10 +97,10 @@ class SvgTurtle(TNavigator, TPen):
             self._lines_to_draw = []
 
     def window_width(self):
-        return self._window_width
+        return self.screen.window_width()
 
     def window_height(self):
-        return self._window_height
+        return self.screen.window_height()
 
     def write(self,
               arg,
