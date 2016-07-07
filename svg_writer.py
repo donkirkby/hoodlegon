@@ -7,7 +7,9 @@ from svg_turtle import SvgTurtle
 
 
 def main():
-    drawing = svgwrite.Drawing('six_star.svg', size=("380px", "350px"))
+    size = ("380px", "350px")
+    drawing = svgwrite.Drawing('six_star.svg', size=size)
+    drawing.add(drawing.rect(fill='white', size=size))
     t = SvgTurtle(drawing)
     turtle.Turtle._screen = t.screen
     turtle.Turtle._pen = t
