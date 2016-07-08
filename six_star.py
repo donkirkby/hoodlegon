@@ -15,6 +15,7 @@ def draw(depth, size):
 
 
 def draw_all():
+    pensize(2)
     up()
     back(window_width()/2 - 100)
     right(90)
