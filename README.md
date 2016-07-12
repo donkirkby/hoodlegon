@@ -48,6 +48,6 @@ interesting patterns.
 
 [occupy]: https://occupymath.wordpress.com/2016/07/04/image-of-the-week-8/
 [live]: http://donkirkby.github.io/live-py-plugin/
-[sea_star]: https://raw.githubusercontent.com/donkirkby/hoodlegon/master/sea_star.svg
-[six_star]: https://raw.githubusercontent.com/donkirkby/hoodlegon/master/six_star.svg
-[hyacinth]: https://raw.githubusercontent.com/donkirkby/hoodlegon/master/hyacinth.svg
+[sea_star]: https://rawgit.com/donkirkby/hoodlegon/master/sea_star.svg
+[six_star]: https://rawgit.com/donkirkby/hoodlegon/master/six_star.svg
+[hyacinth]: https://rawgit.com/donkirkby/hoodlegon/master/hyacinth.svg
